@@ -7,6 +7,7 @@ const TodoForm = props => {
                 <label>New Todo Item: </label>
                 <input type='text'placeholder='Input Task Here'></input>
                 <button>Add Item</button>
+                <button>Clear Completed</button>
             </form>
         </div>
     )
