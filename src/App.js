@@ -26,11 +26,22 @@ class App extends React.Component {
   
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
+  handleChanges = event => {
+    this.setState({
+      task: event.target.value
+    })
+    // console.log(this.state) // handling changes effectively
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
+        <TodoForm handleChanges={this.handleChanges}/>
         <TodoList todo={todo} />
 
       </div>
