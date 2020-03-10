@@ -14,6 +14,10 @@ class TodoForm extends React.Component {
         event.preventDefault();
         this.props.addTask(this.state.task);
         // console.log('handle submit', this.state.task)
+        this.setState({
+            task: ""
+        });
+        console.log('state on submit', this.state)
       };
     handleChanges = event => {
         console.log('target', event.target.value)
@@ -27,7 +31,7 @@ class TodoForm extends React.Component {
             <div className='todo-form'>
                 <form onSubmit={this.handleSubmit}>
                     <label>New Todo Item: </label>
-                    <input type='text'placeholder='Input Task Here' onChange={this.handleChanges}></input>
+                    <input type='text'placeholder='Input Task Here' onChange={this.handleChanges} value={this.state.task}></input>
                     <button type='submit'>Add Item</button>
                     <button type='button'>Clear Completed</button>
                 </form>
