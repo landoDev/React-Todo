@@ -3,11 +3,7 @@ import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 
 // Established an array to pass down to the list
-const todo = [{
-  task: 'Placeholder',
-  id: Date.now(),
-  isCompleted: false
-}]
+const todo = []
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -57,7 +53,7 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addTask={this.addTask}/>
-        <TodoList todo={this.state.todo} />
+        <TodoList todo={this.state.todo} toggleCompleted={this.toggleCompleted} />
 
       </div>
     );
