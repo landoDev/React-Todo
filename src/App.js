@@ -4,10 +4,16 @@ import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 
 const MainDiv = styled.div`
-  background-color: #64696C;
-  border: 5px outset #394A59;
-  h2{
-    text-align: center;
+  background-color: #FFFFFF;
+  border: 5px outset #000000;
+  h2, p {
+    text-align: center
+  }
+  .title{
+    font-size: 4rem;
+  }
+  .subtitle {
+    font-size: 2rem;
   }
 `;
 // Established an array to pass down to the list
@@ -69,7 +75,8 @@ class App extends React.Component {
   render() {
     return (
       <MainDiv>
-        <h2>Imperial To-Do List</h2>
+        <h2 className='title'>Execute Order List</h2>
+        <p className='subtitle'>An Imperial To-do App</p>
         <TodoForm addTask={this.addTask} clearCompleted={this.clearCompleted}/>
         <TodoList todo={this.state.todo} toggleCompleted={this.toggleCompleted} />
 

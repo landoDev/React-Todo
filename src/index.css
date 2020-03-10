@@ -1,8 +1,8 @@
 body{
     box-sizing: border-box;
-    background-color: black;
+    background-color: #64696C;
 }
 h1, h2, h3, h4, h5, h6, p, label, button{
     color: #000000;
-    text-shadow: 5px 0px 5px 	#394A59;
+    text-shadow: 3px 0px 3px #556567;
 }
