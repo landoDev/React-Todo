@@ -6,7 +6,7 @@ class TodoForm extends React.Component {
     constructor(){
         super();
         this.state = {
-            task: ''
+            task: '',
         }
     }    
 
@@ -17,10 +17,10 @@ class TodoForm extends React.Component {
         this.setState({
             task: ""
         });
-        console.log('state on submit', this.state)
+        // console.log('state on submit', this.state)
       };
     handleChanges = event => {
-        console.log('target', event.target.value)
+        // console.log('target', event.target.value)
         this.setState({
           task: event.target.value,
         })
@@ -33,7 +33,7 @@ class TodoForm extends React.Component {
                     <label>New Todo Item: </label>
                     <input type='text'placeholder='Input Task Here' onChange={this.handleChanges} value={this.state.task}></input>
                     <button type='submit'>Add Item</button>
-                    <button type='button'>Clear Completed</button>
+                    <button type='button' onClick={()=> this.props.clearCompleted(this.state.isCompleted)}>Clear Completed</button>
                 </form>
             </div>
         )
