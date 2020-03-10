@@ -1,7 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 
+const MainDiv = styled.div`
+  background-color: #64696C;
+  border: 5px outset #394A59;
+  h2{
+    text-align: center;
+  }
+`;
 // Established an array to pass down to the list
 const todo = []
 
@@ -60,12 +68,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <MainDiv>
+        <h2>Imperial To-Do List</h2>
         <TodoForm addTask={this.addTask} clearCompleted={this.clearCompleted}/>
         <TodoList todo={this.state.todo} toggleCompleted={this.toggleCompleted} />
 
-      </div>
+      </MainDiv>
     );
   }
 }
